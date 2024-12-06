@@ -16,7 +16,7 @@ const Form = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/cultivos/${id}`)
+      fetch(`http://3.219.37.136:3000/cultivos/${id}`)
         .then((response) => response.json())
         .then((data) => setFormData(data))
         .catch((error) => console.error('Error fetching cultivo:', error));
@@ -35,8 +35,8 @@ const Form = () => {
       body: JSON.stringify(formData),
     };
     const url = id
-      ? `http://localhost:3000/cultivos/${id}`
-      : 'http://localhost:3000/cultivos';
+      ? `http://3.219.37.136:3000/cultivos/${id}`
+      : 'http://3.219.37.136:3000/cultivos';
     const response = await fetch(url, requestOptions);
     if (response.ok) {
       // Si la solicitud fue exitosa, redirige a Home

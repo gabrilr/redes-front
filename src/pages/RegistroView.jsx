@@ -17,7 +17,7 @@ const RegistroView = () => {
       return;
     }
 
-    const response = await fetch('http://localhost:3000/auth/register', {
+    const response = await fetch('http://3.219.37.136:3000/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

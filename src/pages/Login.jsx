@@ -13,7 +13,7 @@ const LoginView = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://gabrilreyes.zapto.org:3000/auth/login', {
+      const response = await fetch('http://3.219.37.136:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
