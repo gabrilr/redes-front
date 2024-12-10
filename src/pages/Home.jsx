@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm('¿Estás seguro de eliminar este cultivo?')) {
-      const response = await fetch(`https://redes-back-ohrk.onrender.com/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://redes-back-ohrk.onrender.com/cultivo/${id}`, { method: 'DELETE' });
       
       if (response.ok) {
         // Actualizar el estado eliminando el cultivo de la lista localmente
