@@ -11,16 +11,20 @@ const RegistroView = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     if (password !== confirmPassword) {
       alert('Las contraseñas no coinciden');
       return;
     }
 
+    const token = localStorage.getItem("authToken");
+
+
     const response = await fetch('https://redes-back-ohrk.onrender.com/auth/register', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         'usuario': username,

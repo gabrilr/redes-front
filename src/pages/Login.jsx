@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import logo from '../assets/Logo_Empresa.png';
 
-const LoginView = () => {
+const LoginView = ({ setAuthorized }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -26,7 +26,7 @@ const LoginView = () => {
 
       if (response.ok) {
         const data = await response.json();
-
+        setAuthorized(false);
         // Token en localStorage
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('typeUser', data.categoria);
