@@ -5,7 +5,7 @@ const Home = () => {
   const [cultivos, setCultivos] = useState([]);
 
   const fetchCultivos = async () => {
-    const response = await fetch('http://3.219.37.136:3000/cultivos/');
+    const response = await fetch('https://redes-back-ohrk.onrender.com/cultivos/');
     if (response.ok) {
       const data = await response.json();
       setCultivos(data);
@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm('¿Estás seguro de eliminar este cultivo?')) {
-      const response = await fetch(`http://3.219.37.136:3000/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://redes-back-ohrk.onrender.com/${id}`, { method: 'DELETE' });
       
       if (response.ok) {
         // Actualizar el estado eliminando el cultivo de la lista localmente
